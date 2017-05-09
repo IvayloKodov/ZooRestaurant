@@ -248,19 +248,19 @@
     <Content Include="Content\Images\bottomFooter.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Delivery\кутия за храна2.png">
+    <Content Include="Content\Images\Delivery\foodBox2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Delivery\поставка за чаши %28за вкъщи%292.png">
+    <Content Include="Content\Images\Delivery\cups2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Delivery\поставка за чаши %28за вкъщи%293.png">
+    <Content Include="Content\Images\Delivery\cups3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Delivery\храна.png">
+    <Content Include="Content\Images\Delivery\food.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Images\Delivery\чаша плодове2.png">
+    <Content Include="Content\Images\Delivery\cupFruits.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\interior-2.png">
