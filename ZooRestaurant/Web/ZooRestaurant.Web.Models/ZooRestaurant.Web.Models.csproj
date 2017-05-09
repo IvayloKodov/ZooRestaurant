@@ -99,7 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IMapping.cs" />
-    <Compile Include="ValidationAttributes\CartSizeAttribute.cs" />
     <Compile Include="ViewModels\Address\AddressViewModel.cs" />
     <Compile Include="ViewModels\Account\CustomerOrderViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
