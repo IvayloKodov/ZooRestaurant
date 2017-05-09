@@ -1,0 +1,90 @@
+﻿[
+  {
+    "Name": "Салата с ягоди, сирена и ядки",
+    "Weight": 300,
+    "Description": "Айсберг, рукола, зелена салата, сушени кайсии, кашкавал, чедър, орехи, дресинг Соево-горчичен.",
+    "Price": "6.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/SaladStrawberry.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Салата Енерджи",
+    "Weight": 280,
+    "Description": "Лимец, императорски ориз, киноа, спанак, домати, магданоз, зеленчуков дресинг.",
+    "Price": "6.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/SaladEnergy.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Салата Цезар",
+    "Weight": 290,
+    "Description": "Зелена салата, кашкавал, крутони, пармезан, панирано пилешко бяло месо, сос \"Цезар\" с аншоа.",
+    "Price": "7.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/SaladCesar.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Салата с киноа и бяла риба",
+    "Weight": 440,
+    "Description": "Киноа, бяла риба, зелена салата, домати, яйце, печен пипер, сирене, крутони и соево-горчичен дресинг.",
+    "Price": "7.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/SaladKinoaWhiteFish.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Шопска салата",
+    "Weight": 380,
+    "Description": "Домати, краставици, сирене, лук, магданоз и зехтин.",
+    "Price": "4.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/ShopskaSalad.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Гръцка салата",
+    "Weight": 370,
+    "Description": "Домати, краставици, сирене, червен лук, зелен пипер, маслини, риган и зехтин.",
+    "Price": "5.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/GreekSalad.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Шефска салата",
+    "Weight": 340,
+    "Description": "Айсберг, зелена салата, тиквички, моркови, печен пипер, гъби, патладжан, домати, дресинг \"Винегрет\".",
+    "Price": "6.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/ChiefSalad.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Фитнес",
+    "Weight": 370,
+    "Description": "Спанак, червено цвекло, моркови, мус от сирене Филаделфия с копър, сусамов микс, соево-горчичен дресинг.",
+    "Price": "5.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Salads/Images/SaladFitness.png",
+        "FileExtension": "png"
+      }
+  }
+]

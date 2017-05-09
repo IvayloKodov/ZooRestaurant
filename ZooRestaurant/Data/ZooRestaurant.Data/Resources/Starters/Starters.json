@@ -1,0 +1,68 @@
+﻿[
+  {
+    "Name": "Пилешки пръчици с пържени картофи",
+    "Weight": 300,
+    "Description": "Пилешки пръчици с пържени картофи, сос от сметана и синьо сирене.",
+    "Price": "6.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/ChickenSticksFrites.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Пресни картофи на барбекю",
+    "Weight": 240,
+    "Description": "Пресни картофи с микс ароматни подправки(розмарин, риган и чесън).",
+    "Price": "3.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/FreshPotatoes.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Уеджис",
+    "Weight": 340,
+    "Description": "Хепи картофи с кашкавал, кетчуп и майонеза.",
+    "Price": "5.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/Wedges.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Бирени кюфтенца с ароматен сос и картофено пюре",
+    "Weight": 290,
+    "Description": "Кюфтенца от свинско месо с подправки, картофено пюре и сос Лефе (маслен сос с тъмна бира Лефе и соев сос).",
+    "Price": "7.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/BeerMeatBalls.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Зеленчуци на BBQ",
+    "Weight": 240,
+    "Description": "Изпечени зеленчуци (тиквички, моркови, патладжан, червен пипер и гъби). Пресен картоф овкусени с розмарин, риган, чесън, зехтин и лимон.",
+    "Price": "5.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/VegetablesBBQ.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Таратор",
+    "Weight": 500,
+    "Description": "Кисело мляко, пресни краставици, орехи, чесън, олио и свежи подправки.",
+    "Price": "3.29",
+    "Image": 
+      {
+        "UrlPath": "Resources/Starters/Images/Tarator.png",
+        "FileExtension": "png"
+      }
+  }
+]

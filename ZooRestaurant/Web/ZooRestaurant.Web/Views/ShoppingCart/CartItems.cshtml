@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ZooRestaurant.Web.Models.ViewModels.ShoppingCart.CartItemViewModel>
+
+@foreach (var cartItem in @Model)
+{
+    <li>
+        <div class="item">
+            <div class="item-left">
+                <img class="img-responsive" src="@Url.Action("GetImage", "Images", new {id = cartItem.ImageId})" alt="meal.png" width="50px" />
+                <span class="item-info">
+                    <span>@cartItem.Name</span>
+                    <span>@cartItem.Quantity бр. - @cartItem.TotalPrice лв.</span>
+                </span>
+            </div>
+        </div>
+    </li>
+}

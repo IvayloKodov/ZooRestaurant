@@ -1,0 +1,80 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Profile.ProfileViewModel
+@{
+    ViewBag.Title = "Профил";
+}
+
+@section styles
+{
+    <style>
+        #profile {
+            font-size: 1.5em;
+        }
+
+        .file {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+}
+<div class="container" style="margin-top: 30px;">
+    <h2>Профил</h2>
+
+    <div id="profile" class="row">
+        <div class="col-sm-4 col-xs-12">
+            <img src="@Url.Action("GetImage", "Images", new {id = Model.ImageId})" class="img-responsive" />
+        </div>
+
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <ul>
+                <li><span class="glyphicon glyphicon-user"></span> @Model.FirstName @Model.LastName</li>
+                <li><span class="glyphicon glyphicon-map-marker"></span> България </li>
+                <li><span class="glyphicon glyphicon-home"></span> @Model.Address</li>
+                <li><span class="glyphicon glyphicon-phone"></span> @Model.PhoneNumber</li>
+                <li><span class="glyphicon glyphicon-envelope"></span> @Model.Email</li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li>
+                    @Ajax.ActionLink("Профил", "ProfilePage", new { area = String.Empty }, new AjaxOptions()
+               {
+                   InsertionMode = InsertionMode.Replace,
+                   HttpMethod = "GET",
+                   UpdateTargetId = "content"
+               }, new { @class = "btn btn-success" })
+                </li>
+                <li>
+                    @Ajax.ActionLink("Промени", "Edit", new { area = String.Empty }, new AjaxOptions()
+               {
+                   InsertionMode = InsertionMode.Replace,
+                   HttpMethod = "GET",
+                   UpdateTargetId = "content"
+               }, new { @class = "btn btn-success" })
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br />
+
+    <div id="content">
+        @Html.Partial("_ProfilePartialView", @Model)
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/Custom/ChangeTownNeigborhoods.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', '.browse', function () {
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(document).on('change', '.file', function () {
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

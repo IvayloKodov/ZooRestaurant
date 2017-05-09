@@ -1,0 +1,46 @@
+﻿[
+  {
+    "Name": "Домашен суджук",
+    "Weight": 300,
+    "Description": "Домашен суджук с картофи на барбекю и лютеница.",
+    "Price": "8.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/PorkDishes/Images/HomeSausage.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Свинска пържола с гъбен сос",
+    "Weight": 350,
+    "Description": "Свинска вратна пържола, печени овкусени картофи, гъбен сос.",
+    "Price": "9.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/PorkDishes/Images/PorkMushroomSauce.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Свински ребърца с пресни картофи",
+    "Weight": 600,
+    "Description": "Свински ребра на скара, намазани със сос Барбекю, пресни печени картофи.",
+    "Price": "15.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/PorkDishes/Images/PorkRibs.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Свинска вратна пържолка с печени зеленчуци",
+    "Weight": 400,
+    "Description": "Свинска вратна пържола с гарнитура печени зеленчуци.",
+    "Price": "9.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/PorkDishes/Images/PorkMushroomSauce.png",
+        "FileExtension": "png"
+      }
+  }
+]

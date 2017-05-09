@@ -1,0 +1,8 @@
+﻿@using ZooRestaurant.Web.Common.Helpers
+@model ZooRestaurant.Web.Common.Enums.MessageSubjectType
+
+@{
+    string subject = @Model.GetDisplayName();
+}
+
+<span>@subject</span>

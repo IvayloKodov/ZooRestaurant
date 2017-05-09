@@ -1,0 +1,63 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Messages.MessageBoxViewModel
+@{
+    ViewBag.Title = "Inbox";
+}
+
+@section styles
+{
+    <link href="~/Content/Css/MessageBox.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                    <a href="#"><span class="badge pull-right">@Html.Action("MessagesCount", "Messages")</span> Кутия </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href="#unreaded" data-toggle="tab">
+                        <span class="glyphicon glyphicon-inbox"></span>
+                        Непрочетени
+                    </a>
+                </li>
+                <li>
+                    <a href="#readed" data-toggle="tab">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Прочетени
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Messages -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="unreaded">
+                    <div class="list-group">
+                        @foreach (var message in @Model.UnreadedMessages)
+                        {
+                            @Html.Partial("_MessagePartialView", message)
+                        }
+                    </div>
+                </div>
+                <div class="tab-pane fade in" id="readed">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            @foreach (var message in @Model.ReadedMessages)
+                            {
+                                @Html.Partial("_MessagePartialView",message)
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

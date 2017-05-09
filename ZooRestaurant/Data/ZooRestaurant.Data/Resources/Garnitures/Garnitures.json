@@ -1,0 +1,57 @@
+﻿[
+  {
+    "Name": "Пържени Картофи",
+    "Weight": 110,
+    "Description": "",
+    "Price": "2.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Garnitures/Images/Frites.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Печени овкусени картофи",
+    "Weight": 190,
+    "Description": "Печени картофи, овкусени със сол, зехтин и зелен лук.",
+    "Price": "2.89",
+    "Image": 
+      {
+        "UrlPath": "Resources/Garnitures/Images/BakedPotatoes.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Пържени картофи със сирене",
+    "Weight": 280,
+    "Description": "",
+    "Price": "2.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Garnitures/Images/FritesCheese.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Свежа гарнитура",
+    "Weight": 100,
+    "Description": "Зелена салата с домати, овкусена със сос \"Винегрет\".",
+    "Price": "1.69",
+    "Image": 
+      {
+        "UrlPath": "Resources/Garnitures/Images/Fresh.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Домати и краставици",
+    "Weight": 200,
+    "Description": "",
+    "Price": "1.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Garnitures/Images/TomatoesCucumbers.png",
+        "FileExtension": "png"
+      }
+  }
+]

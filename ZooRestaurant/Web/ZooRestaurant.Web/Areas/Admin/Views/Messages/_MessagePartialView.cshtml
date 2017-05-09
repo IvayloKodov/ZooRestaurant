@@ -1,0 +1,26 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Messages.MessagePartViewModel
+@{
+    var message = @Model;
+}
+
+<a href="/Admin/Messages/Read/@message.Id" class="list-group-item">
+    <div class="row">
+        <div class="col-md-4">
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="name" style="min-width: 120px; display: inline-block;">
+                <span>@message.FirstName </span>
+                <span>@message.LastName</span>
+            </span>
+        </div>
+        
+        <div class="col-md-4">
+            <span>@Html.DisplayFor(m => message.Subject)</span>
+        </div>
+        
+        <div class="col-md-4">
+            <span class="pull-right">
+                <span> @message.SendDate.ToString("g")</span>
+            </span>
+        </div>
+    </div>
+</a>

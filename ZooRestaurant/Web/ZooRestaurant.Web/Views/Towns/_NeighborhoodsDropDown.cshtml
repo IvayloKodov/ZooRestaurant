@@ -1,0 +1,9 @@
+﻿
+@model IEnumerable<ZooRestaurant.Web.Models.ViewModels.Address.NeighborhoodViewModel>
+
+<option value="">-- Избери квартал --</option>
+
+@foreach (var neigborhood in @Model)
+{
+    <option value="@neigborhood.Id">@neigborhood.Name</option>
+}

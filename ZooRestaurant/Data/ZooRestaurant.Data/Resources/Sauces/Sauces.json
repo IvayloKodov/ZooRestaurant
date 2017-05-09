@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Name": "Чеснов сос",
+    "Weight": 50,
+    "Price": "0.79",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/GarlicSauce.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Барбекю сос",
+    "Weight": 50,
+    "Price": "1.29",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/BBQSauce.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Лютеница",
+    "Weight": 50,
+    "Price": "0.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/Lutenica.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Кетчуп",
+    "Weight": 50,
+    "Price": "0.29",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/Ketchup.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Майонеза",
+    "Weight": 50,
+    "Price": "0.29",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/Mayonnaise.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Горчица",
+    "Weight": 50,
+    "Price": "0.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/Sauces/Images/Mustard.png",
+        "FileExtension": "png"
+      }
+  }
+]

@@ -1,0 +1,68 @@
+﻿[
+  {
+    "Name": "Пилешка пържола с гъбен сос",
+    "Weight": 400,
+    "Description": "Пилешка пържола от бут, печени овкусени картофи, гъбен сос.",
+    "Price": "8.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/ChickenMushroomSauce.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Пиле фреш",
+    "Weight": 300,
+    "Description": "Пилешко филе, броколи, киноа, лек сос с бяло вино.",
+    "Price": "8.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/ChieckenFresh.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Хрупкави филенца",
+    "Weight": 280,
+    "Description": "Панирани пилешки филенца, пържени картофи и чеснов сос.",
+    "Price": "5.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/CrispyFillets.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Пилешки пръчици с пържени картофи",
+    "Weight": 290,
+    "Description": "Пилешки пръчици с пържени картофи, сос от сметана и синьО сирене.",
+    "Price": "6.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/ChickenSticksWithFrites.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Крехко пиле с зеленчуци",
+    "Weight": 320,
+    "Description": "Крехки пилешки каренца (2 бр.), зеленчуци на барбекю (печени гъби, моркови, тиквички, патладжан, червен пипер (печени чушки), картофи, овкусени с риган, розмарин, лимон, чесън, вегета, сол и магданоз).",
+    "Price": "8.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/SlightChickenWithVegetables.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Домашна пилешка пържола на BBQ",
+    "Weight": 300,
+    "Description": "Пилешка пържола от бутче с кожа, пресни картофи на барбекю, лютеница..",
+    "Price": "8.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/ChickenDishes/Images/HomemadeChickenBBQ.png",
+        "FileExtension": "png"
+      }
+  }
+]

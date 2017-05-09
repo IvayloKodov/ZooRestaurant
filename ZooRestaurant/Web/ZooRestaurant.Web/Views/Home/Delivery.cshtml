@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Доставка";
+}
+
+<section class="section visible-md visible-lg ">
+    <div class="container ">
+        <div class="jumbotron">
+            <p>
+                <strong>Zoo Restaurant</strong> - Доставки за дома и офиса.
+            </p>
+            <p class="text-right">
+                Телефон: 359/2 822 82 82
+            </p>
+            <br />
+            <p>
+                За регистрирани потребители през секция @Html.ActionLink("Меню", "Dishes", "Menu").
+            </p>
+            <p>
+                За районите на София и Пловдив - доставка 2 лв.
+                За поръчки над 30 лв. - безплатна доставка.
+                Време за доставка - от 30 мин. до 60 мин.
+            </p>
+        </div>
+
+        <h3>Нашите свежи предложения:</h3>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Content/Images/Delivery/храна.png" alt="box.png">
+                    <div class="carousel-caption">
+                        <h2>Закуска: Сандвич + Фреш (по избор).</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/Delivery/кутия за храна2.png" alt="...">
+                    <div class="carousel-caption">
+                        <h2>Превъзходни салати за вашите гости.</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/Delivery/поставка за чаши (за вкъщи)2.png" alt="coffee.png">
+                    <div class="carousel-caption">
+                        <h2>Кафе за вкъщи.</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/Images/Delivery/чаша плодове2.png" alt="freshFruit.png">
+                    <div class="carousel-caption">
+                        <h2>Фреш с пресни плодове.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />

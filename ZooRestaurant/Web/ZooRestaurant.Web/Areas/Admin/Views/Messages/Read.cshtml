@@ -1,0 +1,59 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Messages.MessageViewModel
+@{
+    ViewBag.Title = "Read";
+}
+
+@section styles
+{
+    <style>
+        .row {
+            padding-top: 2%;
+        }
+    </style>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="text-center">Съобщение</p>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-1 control-label">От:</label>
+                        <div class="col-sm-11">
+                            <div id="name" class="form-control">
+                                <p>@Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-1 control-label">Поща:</label>
+                        <div class="col-sm-11">
+                            <div id="email" class="form-control">
+                                <p>@Html.DisplayFor(m => m.Email)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="col-sm-1 control-label">Обект:</label>
+                        <div class="col-sm-11">
+                            <div id="subject" class="form-control">
+                                <p>@Html.DisplayFor(m => m.Subject)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="12" readonly="readonly" style="background-color: aliceblue">@Model.Content</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <a href="@Request.UrlReferrer" class="btn btn-danger">Назад</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.col-->
+
+    </div>
+</div>

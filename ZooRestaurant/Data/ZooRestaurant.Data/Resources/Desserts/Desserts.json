@@ -1,0 +1,57 @@
+﻿[
+  {
+    "Name": "Бисквитена торта с нутела",
+    "Weight": 150,
+    "Description": "Домашна торта с бисквити, крем от маскарпоне, заквасена сметана и шоколад",
+    "Price": "5.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Desserts/Images/BiscuitNutella.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Чийзкейк с боровинки",
+    "Weight": 100,
+    "Description": "Кейк с хрупкави бисквитени блатове, \"Филаделфия\" крем и сладко от боровинки",
+    "Price": "5.39",
+    "Image": 
+      {
+        "UrlPath": "Resources/Desserts/Images/CheesecakeBlueBerries.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Шоколадова торта с Линдт",
+    "Weight": 100,
+    "Description": "Торта от фин млечен шоколад и бисквитен блат, поръсена с какао.",
+    "Price": "5.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Desserts/Images/ChocolateLindt.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Гофрета с шоколад",
+    "Weight": 140,
+    "Description": "Гофрета, течен шоколад и пудра захар.",
+    "Price": "4.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/Desserts/Images/WaferChocolate.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Крем брюле с карамел",
+    "Weight": 150,
+    "Description": "Сметанов крем с топинг карамел.",
+    "Price": "3.89",
+    "Image": 
+      {
+        "UrlPath": "Resources/Desserts/Images/CreamBrush.png",
+        "FileExtension": "png"
+      }
+  }
+]

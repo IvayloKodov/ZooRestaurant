@@ -1,0 +1,40 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Meals.MealDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "../Shared/_MenuLayout.cshtml";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="@Url.Action("GetImage","Images",new {id=@Model.Id})" alt="meal.png" class="img-responsive">
+            </div>
+            <div class="col-md-8">
+                <div class="container" style="border-bottom:1px solid black">
+                    <h2>@Model.Name</h2>
+                </div>
+                <hr>
+                <ul class="container details">
+                    <li><p><span>@Html.DisplayNameFor(m => m.Description): </span>@Model.Description</p></li>
+                    <li><p><span>@Html.DisplayNameFor(m => m.Weight): </span>@Model.Weight г.</p></li>
+                    <li><p><span>@Html.DisplayNameFor(m => m.Price): </span>@Model.Price лв.</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="@Request.UrlReferrer" class="btn btn-danger"><i class="fa fa-arrow-circle-left"></i> Назад</a>
+            </div>
+            <div class="col-md-8">
+                @using (Html.BeginForm("Add", "ShoppingCart", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" value="@Model.Id" name="mealId" />
+                    <button type="submit" class="btn btn-danger pull-right">ДОБАВИ В КОЛИЧКАТА<i class="fa fa-shopping-cart"></i></button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

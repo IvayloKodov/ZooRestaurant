@@ -1,0 +1,137 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Account.CustomerOrderViewModel
+@{
+    ViewBag.Title = "Поръчка";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <h3>
+                Потвърждение на поръчката
+            </h3>
+            <table class="table table-hover">
+                <thead>
+                <th></th>
+                <th>ИНФОРМАЦИЯ ЗА ДОСТАВКА</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.FirstName)</td>
+                        <td>@Html.DisplayFor(m => m.FirstName)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.LastName)</td>
+                        <td>@Html.DisplayFor(m => m.LastName)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(m => m.PhoneNumber)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.Address)</td>
+                        <td>гр. @Html.DisplayFor(m => m.Address.Town), кв. @Html.DisplayFor(m => m.Address.Neighborhood), адрес: @Html.DisplayFor(m => m.Address.AdditionalAddress)</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.Comment)</td>
+                        <td>@Html.DisplayFor(m => m.Comment)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Продукти</th>
+                        <th>Количество</th>
+                        <th class="text-center">Цена</th>
+                        <th class="text-center">Всичко</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var mealCartViewModel in @Model.Carts)
+                    {
+                        <tr>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="@Url.Action("GetImage", "Images", new {id = @mealCartViewModel.Id})" style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading text-center"><a href="/Meals/@mealCartViewModel.Id/Details">@mealCartViewModel.Name</a></h4>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+
+                                <p>
+                                    <span> <strong>@Html.DisplayFor(m => mealCartViewModel.Quantity)</strong> </span>
+                                </p>
+
+                            </td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>@mealCartViewModel.Price лв.</strong></td>
+
+                            <td class="col-sm-1 col-md-1 text-center"><strong>@mealCartViewModel.TotalPrice лв.</strong></td>
+                        </tr>
+                    }
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td><h5>Всичко</h5></td>
+                        @{
+                            decimal total = @Model.Carts.Sum(m => m.TotalPrice);
+                        }
+                        <td class="text-right"><h5><strong>@total лв.</strong></h5></td>
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td><h5>Доставка</h5></td>
+                        <td class="text-right"><h5><strong>2 лв.</strong></h5></td>
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td>
+                            <h5>Крайна цена</h5>
+                        </td>
+                        <td class="text-right">
+                            <h5>
+                                <strong>@(total + 2) </strong>лв.
+                            </h5>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td>
+                            @{
+                                var options = new AjaxOptions()
+                                {
+                                    HttpMethod = "POST"
+                                };
+                            }
+
+                            @using (Html.BeginForm("Order", "ShoppingCart", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken();
+                                <input type="submit" value="Поръчай" class="btn btn-success" />
+                            }
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

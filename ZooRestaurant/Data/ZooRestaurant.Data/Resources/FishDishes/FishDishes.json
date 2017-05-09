@@ -1,0 +1,57 @@
+﻿[
+  {
+    "Name": "Филе лаврак с лимец и печени зеленчуци",
+    "Weight": 300,
+    "Description": "Филе лаврак, изпечено на скара, поднесено с лимец и печени зеленчуци, овкусени с магданоз и чеснова паста.",
+    "Price": "14.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/FishDishes/Images/FilletLavrak.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Рибни филенца в пармезан с гарнитура",
+    "Weight": 340,
+    "Description": "Бяла риба пангасиус в пармезанова панировка с магданоз, печени овкусени картофи, сос Шведски",
+    "Price": "8.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/FishDishes/Images/FishFilletsParmezan.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Fish and Chips",
+    "Weight": 290,
+    "Description": "Хрупкави рибни филенца, пържени картофи, соево-чеснова майонеза.",
+    "Price": "7.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/FishDishes/Images/FishAndChips.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Сьомга със спанак",
+    "Weight": 410,
+    "Description": "Сьомга филе на барбекю, спанак, сос \"Алфредо\", сирене, чедър, пармезан и картофено пюре",
+    "Price": "12.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/FishDishes/Images/SalmonSpanach.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Сьомга със зеленчуци",
+    "Weight": 380,
+    "Description": "Изпечено филе от сьомга, зеленчуци на барбекю.",
+    "Price": "16.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/FishDishes/Images/SalmonVegetables.png",
+        "FileExtension": "png"
+      }
+  }
+]

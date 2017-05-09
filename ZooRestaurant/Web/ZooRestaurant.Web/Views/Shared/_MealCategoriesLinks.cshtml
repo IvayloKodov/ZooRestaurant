@@ -1,0 +1,20 @@
+﻿@using ZooRestaurant.Web.Common.Enums
+<li>@Html.ActionLink("Всички", "Dishes", "Menu", new { category = String.Empty}, new { area = "" })</li>
+
+<li>@Html.ActionLink("Салати", "Dishes", "Menu", new { category = MealCategoryEnType.Salads }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Предястия", "Dishes", "Menu", new { category = MealCategoryEnType.Starters }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Пиле с гарнитура", "Dishes", "Menu", new { category = MealCategoryEnType.ChickenDishes }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Рибни ястия", "Dishes", "Menu", new { category = MealCategoryEnType.FishDishes }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Свинско с гарнитура", "Dishes", "Menu", new { category = MealCategoryEnType.PorkDishes }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Телешко с гарнитура", "Dishes", "Menu", new { category = MealCategoryEnType.BeafDishes }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Гарнитури", "Dishes", "Menu", new { category = MealCategoryEnType.Garnitures }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Десерти", "Dishes", "Menu", new { category = MealCategoryEnType.Desserts }, new { area = "" })</li>
+
+<li>@Html.ActionLink("Сосове", "Dishes", "Menu", new { category = MealCategoryEnType.Sauces }, new { area = "" })</li>

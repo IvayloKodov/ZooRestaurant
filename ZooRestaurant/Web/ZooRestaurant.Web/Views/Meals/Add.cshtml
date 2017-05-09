@@ -1,0 +1,114 @@
+﻿@model ZooRestaurant.Web.Models.ViewModels.Meals.AddMealViewModel
+@{
+    ViewBag.Title = "Добавяне на нов продукт";
+}
+
+@section styles
+{
+    <style>
+        .file {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-4">
+
+        @using (Html.BeginForm("Add", "Meals", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-md-offset-2 col-md-10">
+                <h2>@ViewBag.Title:</h2>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-info fa" aria-hidden="true"></i></span>
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Weight, new { @class = "col-md-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-info fa" aria-hidden="true"></i></span>
+                        @Html.EditorFor(m => m.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Weight, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Price, new { @class = "col-md-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-money fa" aria-hidden="true"></i></span>
+                        @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description, new { @class = "col-md-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-info fa" aria-hidden="true"></i></span>
+                        @Html.EditorFor(m => m.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Image, new { @class = "col-md-4 control-label" })
+
+                <div class="col-sm-8">
+                    <input type="file" name="Image" class="file">
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                        <input type="text" class="form-control input-lg" disabled placeholder="Качи снимка">
+                        <span class="input-group-btn">
+                            <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Categories, new { @class = "col-md-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-info fa-lg" aria-hidden="true"></i></span>
+                        @Html.DropDownListFor(m => m.CategoryId, @Model.Categories, new { @class = "form-control" } )
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                    <input type="submit" class="btn btn-danger" value="Добави" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).on('click', '.browse', function () {
+            var file = $(this).parent().parent().parent().find('.file');
+            file.trigger('click');
+        });
+        $(document).on('change', '.file', function () {
+            $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

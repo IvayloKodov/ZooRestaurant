@@ -1,0 +1,48 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<ZooRestaurant.Web.Models.ViewModels.Meals.MealViewModel>
+@{
+    ViewBag.Title = "Меню";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+@section Styles{
+    <link href="~/Content/Css/equal-height-columns.css" rel="stylesheet" />
+}
+
+<div class="row">
+    <div class="col-md-8">
+        @if (this.User.IsInRole("Admin"))
+        {
+            <a href="/Meals/Add" area="" class="btn btn-danger"><i class="fa fa-plus"></i>Нов продукт</a>
+        }
+    </div>
+    <div class="col-md-4">
+        @using (Ajax.BeginForm("Search", null,
+            new AjaxOptions
+            {
+                UpdateTargetId = "content",
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "POST"
+            }, new {id = "searchForm"}))
+        {
+            <input class="form-control" placeholder="Търсене" type="text" name="query" oninput="changed()"/>
+
+        }
+    </div>
+</div>
+
+<div id="content">
+    @Html.Partial("_MealsResults", @Model)
+</div>
+
+<div class="row">
+    @Html.PagedListPager(Model, page => Url.Action("Dishes", new { page }))
+</div>
+
+@section Scripts{
+    <script>
+        function changed() {
+            $("#searchForm").submit();
+        }
+    </script>
+}

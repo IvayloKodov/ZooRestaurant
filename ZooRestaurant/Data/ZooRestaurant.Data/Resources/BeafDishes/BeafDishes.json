@@ -1,0 +1,46 @@
+﻿[
+  {
+    "Name": "Телешки филенца с картофи",
+    "Weight": 330,
+    "Description": "Изпечени телешки филенца с Хепи картофки и гъбен сос.",
+    "Price": "15.49",
+    "Image": 
+      {
+        "UrlPath": "Resources/BeafDishes/Images/BeafFilletsFrites.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Телешки бифтеци",
+    "Weight": 320,
+    "Description": "2 бр. телешки бифтеци, пържени картофки, Пепър сос.",
+    "Price": "8.29",
+    "Image": 
+      {
+        "UrlPath": "Resources/BeafDishes/Images/BeafSteak.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Телешки ребра на барбекю",
+    "Weight": 530,
+    "Description": "Крехки телешки ребра, с пресни печени картофки и сос Барбекю.",
+    "Price": "17.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/BeafDishes/Images/BeafRibsBBQ.png",
+        "FileExtension": "png"
+      }
+  },
+  {
+    "Name": "Телешко задушено с ароматен сос",
+    "Weight": 360,
+    "Description": "Телешко месо (джолан), печен овкусен картоф, сос Лефе (маслен сос с тъмна бира Лефе и соев сос) и магданоз.",
+    "Price": "14.99",
+    "Image": 
+      {
+        "UrlPath": "Resources/BeafDishes/Images/BeafStew.png",
+        "FileExtension": "png"
+      }
+  }
+]

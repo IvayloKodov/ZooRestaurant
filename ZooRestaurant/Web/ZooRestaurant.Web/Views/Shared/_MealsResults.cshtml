@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ZooRestaurant.Web.Models.ViewModels.Meals.MealViewModel>
+
+<div class="row row-eq-height">
+    @{
+        int counter = 1;
+    }
+
+    @foreach (var mealViewModel in @Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="@Url.Action("GetImage","Images",new {id=@mealViewModel.Id})" alt="meal.png">
+                <div class="caption">
+                    <h4>@mealViewModel.Name</h4>
+                    @using (Html.BeginForm("Add", "ShoppingCart", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" value="@mealViewModel.Id" name="mealId" />
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span style="font-size: 1.2em"><strong>@mealViewModel.Price лв.</strong></span>
+                            </div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-danger pull-right">Добави<i class="fa fa-shopping-cart"></i></button>
+                                <a href="/Meals/@mealViewModel.Id/Details" class="btn btn-danger pull-right">Детайли<i class="fa fa-arrow-circle-right"></i></a>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        if (counter++ % 3 == 0)
+        {
+            @:</div>
+            @:<div class="row row-eq-height">
+        }
+    }
+</div>
