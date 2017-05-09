@@ -39,8 +39,13 @@
                 var image = new Image()
                 {
                     Content = content,
-                    FileExtension = Path.GetExtension(file.FileName)?.Substring(1)
+
                 };
+
+                if (Path.GetExtension(file.FileName) != null)
+                {
+                    image.FileExtension = Path.GetExtension(file.FileName).Substring(1);
+                }
 
                 return image;
             }
