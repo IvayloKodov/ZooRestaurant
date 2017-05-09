@@ -24,7 +24,7 @@
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css/styles").Include(
                       "~/Content/Css/bootstrap.css",
                       "~/Content/Css/bootstrap-theme.css",
                       "~/Content/Css/Site.css",
