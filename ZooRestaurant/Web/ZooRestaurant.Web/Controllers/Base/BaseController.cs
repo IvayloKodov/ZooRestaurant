@@ -6,6 +6,6 @@
 
     public abstract class BaseController : Controller
     {
-        protected IMapper Mapper => AutoMapperConfig.Configuration.CreateMapper();
+        protected IMapper Mapper {get {return AutoMapperConfig.Configuration.CreateMapper(); } } 
     }
 }

@@ -31,7 +31,8 @@
 
         public override string ToString()
         {
-            return $"гр. {this.Neighborhood.Town.Name},кв. {this.Neighborhood.Name}, {this.AdditionalAddress}";
+            return string.Format("гр. {0},кв. {1}, {2}",
+                this.Neighborhood.Town.Name, this.Neighborhood.Name, this.AdditionalAddress);
         }
     }
 }

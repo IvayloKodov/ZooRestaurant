@@ -80,7 +80,7 @@ namespace ZooRestaurant.Data.Migrations
             this.context.SaveChanges();
 
             var neighborhoodsFilePath =
-                PathHelper.MapPath($"Resources/Neighborhoods/{townNameLatin}Neighborhoods.txt", Assembly.GetExecutingAssembly());
+                PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
 
             var townNeighborhoods = File.ReadAllLines(neighborhoodsFilePath)
                                          .Select(t => t.Trim())

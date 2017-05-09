@@ -21,7 +21,7 @@
             this.orders = orders;
         }
 
-        public ShoppingCart GetCart => this.ShoppingCart;
+        public ShoppingCart GetCart {get {return this.ShoppingCart; } }
 
         public void ChangeQuantity(int id, string operation)
         {

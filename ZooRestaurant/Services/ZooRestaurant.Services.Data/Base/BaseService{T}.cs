@@ -55,6 +55,6 @@
             this.Data.SaveChanges();
         }
 
-        public IMapper Mapper => AutoMapperConfig.Configuration.CreateMapper();
+        public IMapper Mapper {get { return AutoMapperConfig.Configuration.CreateMapper(); } } 
     }
 }

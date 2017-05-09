@@ -1,6 +1,5 @@
 ﻿namespace ZooRestaurant.Services.Data
 {
-    using AutoMapper;
     using Base;
     using Contracts;
     using Web.Models.ViewModels.Profile;

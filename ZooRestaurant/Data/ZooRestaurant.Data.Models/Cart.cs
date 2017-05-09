@@ -25,7 +25,7 @@
         public int Quantity { get; set; }
 
         [NotMapped]
-        public decimal TotalPrice => this.Quantity * this.Price;
+        public decimal TotalPrice {get {return this.Quantity * this.Price; } } 
 
         public int ImageId { get; set; }
 
