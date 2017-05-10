@@ -30,14 +30,14 @@ namespace ZooRestaurant.Data.Migrations
         {
             this.context = context;
 
-            this.SeedTownAndNeighborhoods("София", "Sofia");
-            this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
+            //this.SeedTownAndNeighborhoods("София", "Sofia");
+            //this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
 
             this.CreateRoles();
             this.CreateAdminUser();
 
             this.CreateMealCategories();
-            this.CreateMealsByCategory();
+            //this.CreateMealsByCategory();
         }
 
         private void CreateMealsByCategory()
