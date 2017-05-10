@@ -6,6 +6,7 @@ namespace ZooRestaurant.Data.Migrations
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Web;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -79,9 +80,9 @@ namespace ZooRestaurant.Data.Migrations
             this.context.Towns.AddOrUpdate(t => t.Name, town);
             this.context.SaveChanges();
 
-            var neighborhoodsFilePath =
-                PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
-
+            //var neighborhoodsFilePath =
+            //    PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
+            var neighborhoodsFilePath = HttpContext.Current.Server.MapPath(string.Format("Resources/Neighborhoods/{0}Neighborhoods.txt",townNameLatin));
             var townNeighborhoods = File.ReadAllLines(neighborhoodsFilePath)
                                          .Select(t => t.Trim())
                                          .Select(neighborhoodName => new Neighborhood
