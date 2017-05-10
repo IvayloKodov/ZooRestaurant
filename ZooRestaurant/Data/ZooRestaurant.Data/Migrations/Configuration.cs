@@ -28,16 +28,16 @@ namespace ZooRestaurant.Data.Migrations
 
         protected override void Seed(ZooRestaurantContext context)
         {
-            //this.context = context;
+            this.context = context;
 
-            //this.SeedTownAndNeighborhoods("София", "Sofia");
-            //this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
+            this.SeedTownAndNeighborhoods("София", "Sofia");
+            this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
 
-            //this.CreateRoles();
-            //this.CreateAdminUser();
+            this.CreateRoles();
+            this.CreateAdminUser();
 
-            //this.CreateMealCategories();
-            //this.CreateMealsByCategory();
+            this.CreateMealCategories();
+            this.CreateMealsByCategory();
         }
 
         private void CreateMealsByCategory()
@@ -80,9 +80,9 @@ namespace ZooRestaurant.Data.Migrations
             this.context.Towns.AddOrUpdate(t => t.Name, town);
             this.context.SaveChanges();
 
-            //var neighborhoodsFilePath =
-            //    PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
-            var neighborhoodsFilePath = HttpContext.Current.Server.MapPath(string.Format("Resources/Neighborhoods/{0}Neighborhoods.txt",townNameLatin));
+            var neighborhoodsFilePath =
+                PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
+
             var townNeighborhoods = File.ReadAllLines(neighborhoodsFilePath)
                                          .Select(t => t.Trim())
                                          .Select(neighborhoodName => new Neighborhood
