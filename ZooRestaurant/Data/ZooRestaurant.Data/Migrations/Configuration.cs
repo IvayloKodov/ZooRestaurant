@@ -30,14 +30,14 @@ namespace ZooRestaurant.Data.Migrations
         {
             this.context = context;
 
-            this.SeedTownAndNeighborhoods("София", "Sofia");
-            this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
+            //this.SeedTownAndNeighborhoods("София", "Sofia");
+            //this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
 
             this.CreateRoles();
             this.CreateAdminUser();
 
             this.CreateMealCategories();
-            this.CreateMealsByCategory();
+            //this.CreateMealsByCategory();
         }
 
         private void CreateMealsByCategory()
@@ -118,7 +118,7 @@ namespace ZooRestaurant.Data.Migrations
                     LastName = "Kodov",
                     UserName = "Ifaka",
                     PhoneNumber = "0897903353",
-                    Email = "admin@zoorestaurant.com",
+                    Email = "ivo@abv.bg",
                     Address = new Address()
                     {
                         AdditionalAddress = "бл.136",
