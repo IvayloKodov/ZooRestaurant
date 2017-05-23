@@ -1,8 +1,6 @@
 ﻿namespace ZooRestaurant.Web.Controllers
 {
-    using System.Net;
     using System.Web.Mvc;
-    using Common.Helpers;
     using Data.Models;
     using Services.Data.Contracts;
 
