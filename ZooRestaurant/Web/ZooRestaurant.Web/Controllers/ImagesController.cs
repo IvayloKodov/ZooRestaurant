@@ -17,13 +17,7 @@
         [Route("GetImage")]
         public ActionResult GetImage(int id)
         {
-            Image image = this.images.GetById(id);
-
-            if (image == null)
-            {
-                var defaultImage = this.images.GetDefaultImage();
-                return this.File(defaultImage.Content, "image/" + defaultImage.FileExtension);
-            }
+            Image image = this.images.GetById(id) ?? this.images.GetDefaultImage();
 
             return this.File(image.Content, "image/" + image.FileExtension);
         }
