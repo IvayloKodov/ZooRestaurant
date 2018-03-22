@@ -6,7 +6,6 @@ namespace ZooRestaurant.Data.Migrations
     using System.IO;
     using System.Linq;
     using System.Reflection;
-    using System.Web;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -18,17 +17,17 @@ namespace ZooRestaurant.Data.Migrations
 
     public sealed class Configuration : DbMigrationsConfiguration<ZooRestaurantContext>
     {
-        private ZooRestaurantContext context;
+        private ZooRestaurantContext _context;
 
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
-            this.AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(ZooRestaurantContext context)
         {
-            this.context = context;
+            this._context = context;
 
             this.SeedTownAndNeighborhoods("София", "Sofia");
             this.SeedTownAndNeighborhoods("Пловдив", "Plovdiv");
@@ -62,7 +61,7 @@ namespace ZooRestaurant.Data.Migrations
             var meals = JsonConvert.DeserializeObject<IEnumerable<Meal>>(mealsJson).ToArray();
 
             var categoryName = category.GetDisplayName();
-            var mealCategory = this.context.MealCategories.First(c => c.Name == categoryName);
+            var mealCategory = this._context.MealCategories.First(c => c.Name == categoryName);
 
             foreach (var meal in meals)
             {
@@ -70,15 +69,15 @@ namespace ZooRestaurant.Data.Migrations
                 meal.Image.Content = File.ReadAllBytes(PathHelper.MapPath(meal.Image.UrlPath, assembly));
             }
 
-            this.context.Meals.AddOrUpdate(m => m.Name, meals);
-            this.context.SaveChanges();
+            this._context.Meals.AddOrUpdate(m => m.Name, meals);
+            this._context.SaveChanges();
         }
 
         private void SeedTownAndNeighborhoods(string townNameCyrilic, string townNameLatin)
         {
             var town = new Town { Name = townNameCyrilic };
-            this.context.Towns.AddOrUpdate(t => t.Name, town);
-            this.context.SaveChanges();
+            this._context.Towns.AddOrUpdate(t => t.Name, town);
+            this._context.SaveChanges();
 
             var neighborhoodsFilePath =
                 PathHelper.MapPath(String.Format("Resources/Neighborhoods/{0}Neighborhoods.txt", townNameLatin), Assembly.GetExecutingAssembly());
@@ -92,26 +91,26 @@ namespace ZooRestaurant.Data.Migrations
                                          })
                                          .ToArray();
 
-            this.context.Neighborhoods.AddOrUpdate(n => n.Name, townNeighborhoods);
-            this.context.SaveChanges();
+            this._context.Neighborhoods.AddOrUpdate(n => n.Name, townNeighborhoods);
+            this._context.SaveChanges();
         }
 
         private void CreateRoles()
         {
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(this.context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(this._context));
 
-            this.context.Roles.AddOrUpdate(r => r.Name, new IdentityRole { Name = RolesType.Admin }
+            this._context.Roles.AddOrUpdate(r => r.Name, new IdentityRole { Name = RolesType.Admin }
                                                       , new IdentityRole { Name = RolesType.Customer }
                                                       , new IdentityRole { Name = RolesType.Dispatcher });
 
-            this.context.SaveChanges();
+            this._context.SaveChanges();
         }
 
         private void CreateAdminUser()
         {
-            if (!this.context.Users.Any(u => u.Email == "ivo@abv.bg"))
+            if (!this._context.Users.Any(u => u.Email == "ivo@abv.bg"))
             {
-                var userManager = new UserManager<User>(new UserStore<User>(this.context));
+                var userManager = new UserManager<User>(new UserStore<User>(this._context));
                 var user = new User()
                 {
                     FirstName = "Ivaylo",
@@ -122,7 +121,7 @@ namespace ZooRestaurant.Data.Migrations
                     Address = new Address()
                     {
                         AdditionalAddress = "бл.136",
-                        NeighborhoodId = this.context.Neighborhoods.First().Id
+                        NeighborhoodId = this._context.Neighborhoods.First().Id
                     },
                     Customer = new Customer()
                     {
@@ -134,7 +133,7 @@ namespace ZooRestaurant.Data.Migrations
                 userManager.AddToRole(user.Id, RolesType.Admin);
                 userManager.AddToRole(user.Id, RolesType.Customer);
 
-                this.context.SaveChanges();
+                this._context.SaveChanges();
             }
         }
 
@@ -147,9 +146,9 @@ namespace ZooRestaurant.Data.Migrations
                             .Select(mealName => new MealCategory { Name = mealName })
                             .ToArray();
 
-            this.context.MealCategories.AddOrUpdate(m => m.Name, meals);
+            this._context.MealCategories.AddOrUpdate(m => m.Name, meals);
 
-            this.context.SaveChanges();
+            this._context.SaveChanges();
         }
     }
 }
