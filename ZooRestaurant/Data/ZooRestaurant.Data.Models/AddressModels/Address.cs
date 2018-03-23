@@ -5,11 +5,11 @@
 
     public class Address
     {
-        private ICollection<User> users;
+        private ICollection<User> _users;
 
         public Address()
         {
-            this.users = new HashSet<User>();
+            this._users = new HashSet<User>();
         }
 
         [Key]
@@ -25,14 +25,13 @@
 
         public virtual ICollection<User> Users
         {
-            get { return this.users; }
-            set { this.users = value; }
+            get { return this._users; }
+            set { this._users = value; }
         }
 
         public override string ToString()
         {
-            return string.Format("гр. {0},кв. {1}, {2}",
-                this.Neighborhood.Town.Name, this.Neighborhood.Name, this.AdditionalAddress);
+            return $"гр. {this.Neighborhood.Town.Name},кв. {this.Neighborhood.Name}, {this.AdditionalAddress}";
         }
     }
 }

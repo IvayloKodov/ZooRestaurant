@@ -1,17 +1,16 @@
 ﻿namespace ZooRestaurant.Data.Models
 {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+    using System.ComponentModel.DataAnnotations; 
     using Web.Common.Constants;
 
     public class Image
     {
-        private ICollection<Cart> carts;
+        private ICollection<CartItem> _carts;
 
         public Image()
         {
-            this.carts = new HashSet<Cart>();
+            this._carts = new HashSet<CartItem>();
         }
 
         [Key]
@@ -31,10 +30,10 @@
 
         public virtual User User { get; set; }
 
-        public virtual ICollection<Cart> Carts
+        public virtual ICollection<CartItem> Carts
         {
-            get { return this.carts; }
-            set { this.carts = value; }
+            get { return this._carts; }
+            set { this._carts = value; }
         }
     }
 }

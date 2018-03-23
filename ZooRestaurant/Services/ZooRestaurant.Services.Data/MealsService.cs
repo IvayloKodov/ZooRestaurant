@@ -11,13 +11,13 @@
 
     public class MealsService : BaseService<Meal>, IMealsService
     {
-        private readonly IRepository<MealCategory> categories;
+        private readonly IRepository<MealCategory> _categories;
 
         public MealsService(IRepository<Meal> dataSet,
                             IRepository<MealCategory> categories)
             : base(dataSet)
         {
-            this.categories = categories;
+            this._categories = categories;
         }
 
         public IQueryable<Meal> MealsByCategory(string category)
@@ -38,7 +38,7 @@
 
         public IQueryable<MealCategory> Categories()
         {
-            return this.categories.All();
+            return this._categories.All();
         }
     }
 }

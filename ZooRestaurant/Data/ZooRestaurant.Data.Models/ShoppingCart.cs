@@ -6,11 +6,11 @@
 
     public class ShoppingCart
     {
-        private ICollection<Cart> carts;
+        private ICollection<CartItem> _carts;
 
         public ShoppingCart()
         {
-            this.carts = new HashSet<Cart>();
+            this._carts = new HashSet<CartItem>();
         }
 
         [Key]
@@ -20,10 +20,10 @@
         [Required]
         public virtual Customer Customer { get; set; }
 
-        public virtual ICollection<Cart> Carts
+        public virtual ICollection<CartItem> Carts
         {
-            get { return this.carts; }
-            set { this.carts = value; }
+            get { return this._carts; }
+            set { this._carts = value; }
         }
     }
 }

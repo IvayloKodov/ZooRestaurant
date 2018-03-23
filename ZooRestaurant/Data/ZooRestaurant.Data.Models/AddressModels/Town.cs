@@ -6,11 +6,11 @@
 
     public class Town
     {
-        private ICollection<Neighborhood> neighborhoods;
+        private ICollection<Neighborhood> _neighborhoods;
 
         public Town()
         {
-            this.neighborhoods = new HashSet<Neighborhood>();
+            this._neighborhoods = new HashSet<Neighborhood>();
         }
 
         [Key]
@@ -23,8 +23,8 @@
 
         public virtual ICollection<Neighborhood> Neighborhoods
         {
-            get { return this.neighborhoods; }
-            set { this.neighborhoods = value; }
+            get { return this._neighborhoods; }
+            set { this._neighborhoods = value; }
         }
     }
 }

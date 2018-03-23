@@ -13,7 +13,7 @@
         private readonly IRepository<Order> orders;
 
         public ShoppingCartService(IRepository<ShoppingCart> shoppingCarts,
-                                   IRepository<Cart> carts,
+                                   IRepository<CartItem> carts,
                                    IRepository<Meal> meals,
                                    IRepository<Order> orders)
             : base(shoppingCarts, carts,meals)

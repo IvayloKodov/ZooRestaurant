@@ -7,11 +7,9 @@
 
     public class CustomersService : BaseService<Customer>, ICustomersService
     {
-        public CustomersService(IRepository<Customer> dataSet) 
+        public CustomersService(IRepository<Customer> dataSet)
             : base(dataSet)
         {
         }
-
-
     }
 }

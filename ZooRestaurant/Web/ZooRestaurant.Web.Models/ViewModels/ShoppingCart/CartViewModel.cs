@@ -3,7 +3,7 @@
     using Data.Models;
     using Infrastructure.Mapping.Contracts;
 
-    public class CartViewModel : IMapFrom<Cart>
+    public class CartViewModel : IMapFrom<CartItem>
     {
         public int Id { get; set; }
 

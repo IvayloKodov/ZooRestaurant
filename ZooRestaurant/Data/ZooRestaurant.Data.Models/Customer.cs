@@ -2,17 +2,16 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using AddressModels;
+    using System.ComponentModel.DataAnnotations.Schema; 
     using Web.Common.Constants;
 
     public class Customer
     {
-        private ICollection<Order> orders;
+        private ICollection<Order> _orders;
 
         public Customer()
         {
-            this.orders = new HashSet<Order>();
+            this._orders = new HashSet<Order>();
         }
 
         [Key]
@@ -28,8 +27,8 @@
 
         public virtual ICollection<Order> Orders
         {
-            get { return this.orders; }
-            set { this.orders = value; }
+            get { return this._orders; }
+            set { this._orders = value; }
         }
     }
 }

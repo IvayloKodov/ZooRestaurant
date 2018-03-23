@@ -26,7 +26,7 @@ namespace ZooRestaurant.Data
 
         public virtual IDbSet<ShoppingCart> ShoppingCarts { get; set; }
 
-        public virtual IDbSet<Cart> Carts { get; set; }
+        public virtual IDbSet<CartItem> Carts { get; set; }
 
         public virtual IDbSet<Message> Messages { get; set; }
 

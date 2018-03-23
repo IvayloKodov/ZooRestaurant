@@ -13,18 +13,18 @@
     [RoutePrefix("Menu")]
     public class MenuController : BaseController
     {
-        private readonly IMealsService meals;
+        private readonly IMealsService _meals;
 
         public MenuController(IMealsService meals)
         {
-            this.meals = meals;
+            this._meals = meals;
         }
 
         [HttpGet]
         [Route("Dishes/{category?}")]
         public ActionResult Dishes(string category, int page = 1)
         {
-            var mealsVm = this.meals
+            var mealsVm = this._meals
                               .MealsByCategory(category)
                               .To<MealViewModel>()
                               .OrderBy(m => m.Price)
@@ -37,7 +37,7 @@
         [Route("Search")]
         public ActionResult Search(string query, int page = 1)
         {
-            var result = this.meals
+            var result = this._meals
                 .GetAll()
                 .Search(query)
                 .To<MealViewModel>()
