@@ -10,17 +10,17 @@
 
     public abstract class BaseShoppingCartService : IBaseShoppingCartService
     {
-        private readonly IRepository<ShoppingCart> shoppingCarts;
-        private readonly IRepository<Cart> carts;
-        private readonly IRepository<Meal> meals;
+        private readonly IRepository<ShoppingCart> _shoppingCarts;
+        private readonly IRepository<CartItem> _carts;
+        private readonly IRepository<Meal> _meals;
 
         protected BaseShoppingCartService(IRepository<ShoppingCart> shoppingCarts,
-                                          IRepository<Cart> carts,
+                                          IRepository<CartItem> carts,
                                           IRepository<Meal> meals)
         {
-            this.carts = carts;
-            this.shoppingCarts = shoppingCarts;
-            this.meals = meals;
+            this._carts = carts;
+            this._shoppingCarts = shoppingCarts;
+            this._meals = meals;
         }
 
         public ShoppingCart ShoppingCart
@@ -29,7 +29,7 @@
             {
                 var currentUserId = HttpContext.Current.User.Identity.GetUserId();
 
-                return this.shoppingCarts
+                return this._shoppingCarts
                            .All()
                            .First(s => s.Customer.User.Id == currentUserId);
             }
@@ -38,7 +38,7 @@
 
         public bool Add(int mealId)
         {
-            var meal = this.meals.GetById(mealId);
+            var meal = this._meals.GetById(mealId);
             if (meal == null)
             {
                 return false;
@@ -48,7 +48,7 @@
 
             if (sameMealInCart == null)
             {
-                this.ShoppingCart.Carts.Add(new Cart()
+                this.ShoppingCart.Carts.Add(new CartItem()
                 {
                     Name = meal.Name,
                     ImageId = meal.Image.Id,
@@ -74,19 +74,19 @@
                 throw new InvalidOperationException("There is no such cart Id!");
             }
             this.ShoppingCart.Carts.Remove(cart);
-            this.carts.Delete(cart);
+            this._carts.Delete(cart);
 
             this.Save();
         }
 
-        public IQueryable<Cart> GetAll()
+        public IQueryable<CartItem> GetAll()
         {
             return this.ShoppingCart
                        .Carts
                        .AsQueryable();
         }
 
-        public Cart GetById(int id)
+        public CartItem GetById(int id)
         {
             return this.ShoppingCart
                        .Carts
@@ -95,7 +95,7 @@
 
         public void Save()
         {
-            this.shoppingCarts.SaveChanges();
+            this._shoppingCarts.SaveChanges();
         }
     }
 }

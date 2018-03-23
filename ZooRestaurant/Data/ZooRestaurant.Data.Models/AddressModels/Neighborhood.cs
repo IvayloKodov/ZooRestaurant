@@ -5,11 +5,11 @@
 
     public class Neighborhood
     {
-        private ICollection<Address> addresses;
+        private ICollection<Address> _addresses;
 
         public Neighborhood()
         {
-            this.addresses = new HashSet<Address>();
+            this._addresses = new HashSet<Address>();
         }
 
         [Key]
@@ -24,8 +24,8 @@
 
         public virtual ICollection<Address> Addresses
         {
-            get { return this.addresses; }
-            set { this.addresses = value; }
+            get { return this._addresses; }
+            set { this._addresses = value; }
         }
     }
 }

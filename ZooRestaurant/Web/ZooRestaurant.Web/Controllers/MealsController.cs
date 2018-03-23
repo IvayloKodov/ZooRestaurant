@@ -56,7 +56,7 @@
 
             if (meal == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                return HttpNotFound();
             }
 
             var mealVm = this.Mapper.Map<MealDetailsViewModel>(meal);

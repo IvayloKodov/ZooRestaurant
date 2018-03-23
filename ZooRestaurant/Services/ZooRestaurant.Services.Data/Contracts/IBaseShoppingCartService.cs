@@ -11,9 +11,9 @@
 
         void Remove(int id);
         
-        IQueryable<Cart> GetAll();
+        IQueryable<CartItem> GetAll();
 
-        Cart GetById(int id);
+        CartItem GetById(int id);
 
         void Save();
     }

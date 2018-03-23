@@ -6,11 +6,11 @@
 
     public class MealCategory
     {
-        private ICollection<Meal> meals;
+        private ICollection<Meal> _meals;
 
         public MealCategory()
         {
-            this.meals = new HashSet<Meal>();
+            this._meals = new HashSet<Meal>();
         }
 
         [Key]
@@ -21,8 +21,8 @@
 
         public virtual ICollection<Meal> Meals
         {
-            get { return this.meals; }
-            set { this.meals = value; }
+            get { return this._meals; }
+            set { this._meals = value; }
         }
     }
 }
